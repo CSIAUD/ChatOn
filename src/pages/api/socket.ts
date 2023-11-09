@@ -1,6 +1,6 @@
 import { Server } from 'Socket.IO'
 
-const SocketHandler = (req, res) => {
+const SocketHandler = (req: any, res: any) => {
   if (res.socket.server.io) {
     console.log('Socket is already running') // log dans CMD
   } else {
@@ -8,10 +8,16 @@ const SocketHandler = (req, res) => {
     const io = new Server(res.socket.server)
     res.socket.server.io = io
 
-    io.on('connection', socket => {
-        socket.on('form-submit', msg => {
-            socket.broadcast.emit('form-submit', msg) // Message de retour en direction du front
-        })
+    io.on('connection', (socket: any) => {
+      socket.on('msg-send', (msg: string) => {
+        socket.broadcast.emit('msg-send', msg) // Message de retour en direction du front
+      })
+      socket.on('msg-edit', (msg: string) => {
+        socket.broadcast.emit('msg-edit', msg) // Message de retour en direction du front
+      })
+      socket.on('msg-delete', (msg: string) => {
+        socket.broadcast.emit('msg-delete', msg) // Message de retour en direction du front
+      })
     })
   }
   res.end()
