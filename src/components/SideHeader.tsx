@@ -14,7 +14,7 @@ export default function SideHeader() {
         return (
           <GroupHead
             key={index}
-            lastMessage={groupe.lastMessage}
+            lastMessage={"aahha"}
             unseenMessagesNumber={0}
           />
         );

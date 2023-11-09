@@ -1,8 +1,7 @@
 import Message from "@/model/Message";
 
 type Groupe = {
-  lastMessage: string;
-  unseenNumberMessages: number;
+  nom: string;
   messages: Array<Message>;
 };
 

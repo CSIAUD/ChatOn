@@ -1,3 +1,7 @@
 export default function NewGroupForm() {
-  return <></>;
+  return (
+    <>
+      <input />
+    </>
+  );
 }
