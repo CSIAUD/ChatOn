@@ -1,3 +1,4 @@
+import { Navbar } from "@/src/components/Navbar";
 import "./globals.css";
 
 export default function RootLayout({
@@ -9,7 +10,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="max-w-6xl m-auto">
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
