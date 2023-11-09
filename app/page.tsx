@@ -5,7 +5,7 @@ export default async function Page() {
 
   return (
     <>
-      <h1>Test</h1>
+      <h1 className="text-3xl">Test</h1>
       {JSON.stringify(groups)}
     </>
   );
